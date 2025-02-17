@@ -1,0 +1,211 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.add-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-btn:hover {
+    background-color: #45a049;
+}
+
+.exercise-counter {
+    background-color: white;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.exercise-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.move-handles {
+    cursor: move;
+    padding: 5px;
+}
+
+.exercise-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.exercise-inputs input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.set-counter {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 18px;
+}
+
+.current-set {
+    font-size: 24px;
+    font-weight: bold;
+    min-width: 36px;
+    text-align: center;
+}
+
+.sets-info {
+    font-size: 18px;
+}
+
+.counter-btn {
+    padding: 8px 20px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    min-width: 45px;
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.counter-btn:hover {
+    background-color: #007399;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #da190b;
+}
+
+/* Add responsive breakpoints */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .exercise-counter {
+        padding: 15px;
+    }
+
+    .exercise-inputs {
+        grid-template-columns: 1fr;  /* Stack inputs vertically on tablets and mobile */
+    }
+
+    .set-counter {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .counter-btn {
+        padding: 12px 25px;
+        font-size: 24px;
+        min-width: 50px;
+        min-height: 50px;
+    }
+
+    .current-set {
+        font-size: 28px;
+    }
+
+    .sets-info {
+        font-size: 20px;
+    }
+
+    .delete-btn {
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .exercise-inputs {
+        grid-template-columns: 1fr 1fr;  /* 2 columns for tablets */
+    }
+    
+    .exercise-inputs input:last-child {
+        grid-column: 1 / -1;  /* Make the last input full width */
+    }
+}
+
+/* Add hover effects only for devices that support hover */
+@media (hover: hover) {
+    .add-btn:hover {
+        background-color: #45a049;
+        transform: translateY(-1px);
+        transition: all 0.2s ease;
+    }
+
+    .counter-btn:hover {
+        background-color: #007399;
+        transform: translateY(-1px);
+        transition: all 0.2s ease;
+    }
+
+    .delete-btn:hover {
+        background-color: #da190b;
+        transform: translateY(-1px);
+        transition: all 0.2s ease;
+    }
+}
+
+/* Improve touch targets for mobile */
+@media (pointer: coarse) {
+    .move-handles {
+        padding: 8px 12px;
+    }
+
+    .exercise-inputs input {
+        padding: 12px;
+        font-size: 16px;  /* Prevent zoom on iOS */
+    }
+} 
